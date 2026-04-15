@@ -299,4 +299,23 @@
         });
     }
 
+    /*----------------------------------------------------*/
+    /*  Copiar Código de Promoción
+    /*----------------------------------------------------*/
+    // Función para copiar texto al portapapeles
+    window.copyPromoCode = function(code) {
+        // Crear un elemento temporal
+        var tempInput = document.createElement('input');
+        tempInput.setAttribute('value', code);
+        document.body.appendChild(tempInput);
+        
+        // Seleccionar y copiar
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        // Mostrar notificación
+        alert('¡Código ' + code + ' copiado al portapapeles!');
+    }
+
 })(jQuery)
