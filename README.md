@@ -14,7 +14,8 @@ Eiser es una plataforma de **comercio electrónico** moderna y responsiva desarr
 - 📝 **Blog** - Artículos y contenido relacionado con productos
 - 👥 **Formulario de Contacto** - Comunicación con el equipo
 - 📍 **Seguimiento de Pedidos** - Rastreo en tiempo real
-- 📱 **Diseño Responsivo** - Compatible con dispositivos móviles y de escritorio
+- � **Copiar Código de Promoción** - Función para copiar cupones al portapapeles
+- �📱 **Diseño Responsivo** - Compatible con dispositivos móviles y de escritorio
 - 🎨 **Personalización** - Temas personalizables mediante SCSS
 
 ---
@@ -116,7 +117,38 @@ Sistema/
 
 ---
 
-## 📱 Páginas Principales
+## � Funciones JavaScript Personalizadas
+
+### copyPromoCode(code)
+
+Función para copiar códigos de promoción/cupones al portapapeles del usuario.
+
+**Ubicación:** `js/custom.js`
+
+**Uso:**
+```html
+<!-- Botón para copiar código -->
+<button onclick="copyPromoCode('EISER2024')" class="btn btn-primary">
+  Copiar Código: EISER2024
+</button>
+
+<!-- Enlace para copiar código -->
+<a href="javascript:copyPromoCode('DESCUENTO50')" class="promo-link">
+  DESCUENTO50
+</a>
+```
+
+**Parámetros:**
+- `code` (string) - El código de promoción a copiar
+
+**Comportamiento:**
+- ✅ Copia el código al portapapeles
+- 🔔 Muestra notificación de confirmación
+- 📱 Compatible con navegadores modernos
+
+---
+
+## �📱 Páginas Principales
 
 | Página | Archivo | Descripción |
 |--------|---------|-------------|
@@ -214,6 +246,25 @@ sassc scss/style.scss css/style.css
 2. Importar en `scss/_variables.scss`
 3. Recompilar CSS
 
+### Agregar Funciones JavaScript Personalizadas
+1. Abrir `js/custom.js`
+2. Agregar la función dentro del IIFE jQuery (antes del cierre `})(jQuery)`)
+3. Llamar desde HTML usando `onclick="functionName(parameters)"`
+
+**Ejemplo de nueva función:**
+```javascript
+// Función global accesible desde HTML
+window.miFunction = function(param) {
+    // Tu código aquí
+    console.log('Función ejecutada con: ' + param);
+}
+```
+
+**Uso en HTML:**
+```html
+<button onclick="miFunction('valor')">Click aquí</button>
+```
+
 ---
 
 ## 🔒 Seguridad
@@ -243,8 +294,13 @@ Para reportar bugs, solicitar funcionalidades u obtener soporte:
 
 ## 🔄 Versionado
 
-**Versión Actual:** 1.0  
+**Versión Actual:** 1.1  
 **Última Actualización:** Abril 2026
+
+### Cambios Recientes (v1.1)
+- ✨ Función `copyPromoCode()` para copiar códigos de promoción
+- 📚 Documentación de funciones JavaScript personalizadas
+- 🎯 Mejoras en la estructura del README
 
 ---
 
